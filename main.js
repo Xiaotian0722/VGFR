@@ -46,27 +46,27 @@ var music1, music2, music3;
 
 
 // function preload() {
-  bg1 = loadSound('sound/1/background.mp3');
-  bg1.setVolume(0.05);
-  wind1 = loadSound('sound/1/wind1.mp3');
-  wind2 = loadSound('sound/1/wind2.mp3');
-  wind3 = loadSound('sound/1/wind3.mp3');
-  wind1.setVolume(0.3);
-  wind2.setVolume(0.3);
-  wind3.setVolume(0.3);
-  bg2 = loadSound('sound/2/background.mp3');
-  bg2.setVolume(0.05);
-  bird1 = loadSound('sound/2/bird1.mp3');
-  bird2 = loadSound('sound/2/bird2.mp3');
-  bird3 = loadSound('sound/2/bird3.mp3');
-  bg3 = loadSound('sound/3/background.mp3');
-  bg3.setVolume(0.05);
-  music1 = loadSound('sound/3/music1.mp3');
-  music2 = loadSound('sound/3/music2.mp3');
-  music3 = loadSound('sound/3/music3.mp3');
-  music1.setVolume(0.3);
-  music2.setVolume(0.3);
-  music3.setVolume(0.3);
+  // bg1 = loadSound('sound/1/background.mp3');
+  // bg1.setVolume(0.05);
+  // wind1 = loadSound('sound/1/wind1.mp3');
+  // wind2 = loadSound('sound/1/wind2.mp3');
+  // wind3 = loadSound('sound/1/wind3.mp3');
+  // wind1.setVolume(0.3);
+  // wind2.setVolume(0.3);
+  // wind3.setVolume(0.3);
+  // bg2 = loadSound('sound/2/background.mp3');
+  // bg2.setVolume(0.05);
+  // bird1 = loadSound('sound/2/bird1.mp3');
+  // bird2 = loadSound('sound/2/bird2.mp3');
+  // bird3 = loadSound('sound/2/bird3.mp3');
+  // bg3 = loadSound('sound/3/background.mp3');
+  // bg3.setVolume(0.05);
+  // music1 = loadSound('sound/3/music1.mp3');
+  // music2 = loadSound('sound/3/music2.mp3');
+  // music3 = loadSound('sound/3/music3.mp3');
+  // music1.setVolume(0.3);
+  // music2.setVolume(0.3);
+  // music3.setVolume(0.3);
 // }
 
 function setup() {
@@ -93,12 +93,7 @@ function setup() {
   music3 = loadSound('sound/3/music3.mp3');
   music1.setVolume(0.3);
   music2.setVolume(0.3);
-  music3.setVolume(0.3);    
-    bg1.loop();
-    musicPlayed1 = true;
-    playerSequence1 = [];
-    playSequence1();
-        
+  music3.setVolume(0.3);            
     }
 );
   
@@ -124,6 +119,17 @@ function draw() {
 function setuplevel1() {
   createCanvas(600, 600);
   background(0);
+
+      if (!playing1) {
+      playing1 = true;
+      show1 = false;
+      if (!musicPlayed1) {
+        bg1.loop();
+        musicPlayed1 = true;
+      }
+    playerSequence1 = [];
+    playSequence1();
+    }
         // Add event listeners to the buttons
   document.getElementById('buttonA').addEventListener('click', function() {
       playWind('a');
