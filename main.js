@@ -93,7 +93,20 @@ function setup() {
   music3 = loadSound('sound/3/music3.mp3');
   music1.setVolume(0.3);
   music2.setVolume(0.3);
-  music3.setVolume(0.3);});
+  music3.setVolume(0.3);
+     if (currentLevel === 1) {
+    if (!playing1) {
+      playing1 = true;
+      show1 = false;
+      if (!musicPlayed1) {
+        bg1.loop();
+        musicPlayed1 = true;
+      }
+    playerSequence1 = [];
+    playSequence1();
+    }
+  }
+});
   
   if (currentLevel === 1) {
     setuplevel1();
@@ -153,8 +166,8 @@ function instruction() {
   fill(255);
   textSize(15);
   text("Click the buttons to make sounds or replay the sequence.", width / 2, height / 2 );
-  fill(150)
-  text("Click to continue!", width / 2, height / 2 + 25);
+  // fill(150)
+  // text("Click to continue!", width / 2, height / 2 + 25);
 }
 
 function drawlevel1() {
