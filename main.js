@@ -457,18 +457,18 @@ function replaySequence3() {
 }
 
 function mousePressed() {
-  // if (currentLevel === 1) {
-  //   if (!playing1) {
-  //     playing1 = true;
-  //     show1 = false;
-  //     if (!musicPlayed1) {
-  //       bg1.loop();
-  //       musicPlayed1 = true;
-  //     }
-  //   playerSequence1 = [];
-  //   playSequence1();
-  //   }
-  // }
+  if (currentLevel === 1) {
+    if (!playing1) {
+      playing1 = true;
+      show1 = false;
+      if (!musicPlayed1) {
+        bg1.loop();
+        musicPlayed1 = true;
+      }
+    playerSequence1 = [];
+    playSequence1();
+    }
+  }
   if (currentLevel === 2) {
     if (!playing2) {
       playing2 = true;
