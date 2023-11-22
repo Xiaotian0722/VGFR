@@ -45,7 +45,34 @@ var bird1, bird2, bird3;
 var music1, music2, music3;
 
 
-function preload() {
+// function preload() {
+//   bg1 = loadSound('sound/1/background.mp3');
+//   bg1.setVolume(0.05);
+//   wind1 = loadSound('sound/1/wind1.mp3');
+//   wind2 = loadSound('sound/1/wind2.mp3');
+//   wind3 = loadSound('sound/1/wind3.mp3');
+//   wind1.setVolume(0.3);
+//   wind2.setVolume(0.3);
+//   wind3.setVolume(0.3);
+//   bg2 = loadSound('sound/2/background.mp3');
+//   bg2.setVolume(0.05);
+//   bird1 = loadSound('sound/2/bird1.mp3');
+//   bird2 = loadSound('sound/2/bird2.mp3');
+//   bird3 = loadSound('sound/2/bird3.mp3');
+//   bg3 = loadSound('sound/3/background.mp3');
+//   bg3.setVolume(0.05);
+//   music1 = loadSound('sound/3/music1.mp3');
+//   music2 = loadSound('sound/3/music2.mp3');
+//   music3 = loadSound('sound/3/music3.mp3');
+//   music1.setVolume(0.3);
+//   music2.setVolume(0.3);
+//   music3.setVolume(0.3);
+// }
+
+function setup() {
+   document.getElementById('next').addEventListener('click', function() {
+     switchLevel();});
+   document.getElementById('sound').addEventListener('click', function() {
   bg1 = loadSound('sound/1/background.mp3');
   bg1.setVolume(0.05);
   wind1 = loadSound('sound/1/wind1.mp3');
@@ -66,13 +93,7 @@ function preload() {
   music3 = loadSound('sound/3/music3.mp3');
   music1.setVolume(0.3);
   music2.setVolume(0.3);
-  music3.setVolume(0.3);
-}
-
-function setup() {
-   document.getElementById('next').addEventListener('click', function() {
-     switchLevel();
-       });
+  music3.setVolume(0.3);});
   
   if (currentLevel === 1) {
     setuplevel1();
