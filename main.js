@@ -72,7 +72,11 @@ var music1, music2, music3;
 function setup() {
    document.getElementById('next').addEventListener('click', function() {
      switchLevel();});
-   document.getElementById('sound').addEventListener('click', function() {
+);
+  
+  if (currentLevel === 1) {
+    setuplevel1();
+     document.getElementById('sound').addEventListener('click', function() {
   bg1 = loadSound('sound/1/background.mp3');
   bg1.setVolume(0.05);
   wind1 = loadSound('sound/1/wind1.mp3');
@@ -94,8 +98,8 @@ function setup() {
   music1.setVolume(0.3);
   music2.setVolume(0.3);
   music3.setVolume(0.3);
-     if (currentLevel === 1) {
-    if (!playing1) {
+        
+  if (!playing1) {
       playing1 = true;
       show1 = false;
       if (!musicPlayed1) {
@@ -105,11 +109,8 @@ function setup() {
     playerSequence1 = [];
     playSequence1();
     }
-  }
-});
   
-  if (currentLevel === 1) {
-    setuplevel1();
+}
   } else if (currentLevel === 2) {
     setuplevel2();
   } else if (currentLevel === 3) {
@@ -456,18 +457,18 @@ function replaySequence3() {
 }
 
 function mousePressed() {
-  if (currentLevel === 1) {
-    if (!playing1) {
-      playing1 = true;
-      show1 = false;
-      if (!musicPlayed1) {
-        bg1.loop();
-        musicPlayed1 = true;
-      }
-    playerSequence1 = [];
-    playSequence1();
-    }
-  }
+  // if (currentLevel === 1) {
+  //   if (!playing1) {
+  //     playing1 = true;
+  //     show1 = false;
+  //     if (!musicPlayed1) {
+  //       bg1.loop();
+  //       musicPlayed1 = true;
+  //     }
+  //   playerSequence1 = [];
+  //   playSequence1();
+  //   }
+  // }
   if (currentLevel === 2) {
     if (!playing2) {
       playing2 = true;
