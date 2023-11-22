@@ -72,8 +72,9 @@ var music1, music2, music3;
 function setup() {
    document.getElementById('next').addEventListener('click', function() {
      switchLevel();});
-     document.getElementById('sound').addEventListener('click', function() {
-      bg1 = loadSound('sound/1/background.mp3');
+     
+  document.getElementById('sound').addEventListener('click', function preload() {
+  bg1 = loadSound('sound/1/background.mp3');
   bg1.setVolume(0.05);
   wind1 = loadSound('sound/1/wind1.mp3');
   wind2 = loadSound('sound/1/wind2.mp3');
